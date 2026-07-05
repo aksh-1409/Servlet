@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <h1>Index Page</h1>
+    <hr/>
+
+    <!--######### SignUp Modal ############ Start ############-->
+    <div class="modal fade" id="signup-modal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">User SignUp</h4>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body px-5">
+            <form id="signup_form">
+              <div class="mb-3">
+                <label for="uname" class="form-label">User Name</label>
+                <input type="text" class="form-control" id="uname" />
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" />
+              </div>
+              <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password" />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary me-5" id="signup_btn">
+              SignUp
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--######### SignUp Modal ############ End ############-->
+
+    <!--######### SignIn Offcanvas ############ Start ############-->
+
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <div class="offcanvas offcanvas-start" id="signin_offcanvas">
+      <div class="toast z-3 postion-fixed top-0 start-0 m-2" id="signin_error">
+        <div class="toast-header text-bg-danger">
+          Sorry Sigin Failed... Either email or password is Incorrect...
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="toast"
+          ></button>
+        </div>
+      </div>
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title">User SignIn</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+        ></button>
+      </div>
+      <div class="offcanvas-body px-5">
+        <form
+          id="signin_form"
+          class="border border-secondary rounded p-5 bg-secondary subtle"
+        >
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="_email" />
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="_password" />
+          </div>
+          <button type="button" class="btn btn-primary" id="signin_btn">
+            SignIn
+          </button>
+        </form>
+      </div>
+    </div>
+    <!--######### SignIn Offcanvas ############ End ############-->
+
+    <!-- ############### Prodcuts Modal ############# Start ##############3-->
+    <div class="modal fade" id="product_modal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">New Product</h4>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form action="#" id="product_form">
+              <div class="form-floating mb-3">
+                <input
+                  type="text"
+                  id="product_name"
+                  class="form-control"
+                  placeholder="some product name"
+                />
+                <label for="product_name">Product Name</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input
+                  type="number"
+                  id="product_quantity"
+                  class="form-control"
+                  placeholder="product Quantity"
+                />
+                <label for="product_quantity">Product Quantity</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input
+                  type="number"
+                  id="product_price"
+                  class="form-control"
+                  placeholder="product Price"
+                />
+                <label for="product_price">Product Price</label>
+              </div>
+
+              <div class="form-floating mb-3">
+                <textarea
+                  id="product_description"
+                  class="form-control"
+                  placeholder="product description"
+                ></textarea>
+                <label for="product_description">Product Description</label>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" id="save_product_btn">
+              Save Product
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ############### Prodcuts Modal ############# End ##############3-->
+
+    <div class="container">
+      <!--  
+    <div class="row bg-primary-subtle">
+        <div class="col border border-secondary py-3  ps-3">
+         <div class="col py-3 ps-3">
+          <img src="logo.jpg" alt="" style="width: 45px" />
+          <h4 class="d-inline-block ms-2">ISRDC.IN</h4>
+        </div> -->
+      <!--<div class="col border border-secondary text-end py-3 ">-->
+      <!-- <div class="col text-end py-3">
+          
+          
+        </div> -->
+
+      <nav class="navbar navbar-expand-md bg-body-tertiary">
+        <div class="container-fluid">
+          <a href="#" class="navbar-brand">
+            <img src="logo.jpg" style="width: 45px" alt="" />
+            <span
+              class="fs-6 fs-semibold d-inline-block ms-2 text-primary-emphasis"
+              >ISRDC INC.</span
+            >
+          </a>
+          <button
+            type="button"
+            class="navbar-toggler"
+            data-bs-toggle="collapse"
+            data-bs-target="#x"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="x">
+            <div class="me-auto"></div>
+            <span id="signin_signup_box">
+              <button
+                type="button"
+                id="sup"
+                class="btn btn-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#signup-modal"
+              >
+                Sign Up
+              </button>
+              <button
+                type="button"
+                id="sin"
+                class="btn btn-success ms-2 me-3"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#signin_offcanvas"
+              >
+                Sign In
+              </button>
+            </span>
+            <span id="signout_welcome_box" class="d-none">
+              <span id="welcome_user">Welcome</span>
+              <button type="button" class="btn-danger btn me-3 ms-2" id="sout">
+                SignOut
+              </button>
+            </span>
+          </div>
+        </div>
+      </nav>
+
+      <!--## Menu Bar ## -->
+      <div class="row d-none" id="user_area">
+        <div class="col">
+          <div class="row">
+            <div class="col">
+              <ul class="nav nav-pills ms-3 mt-3">
+                <li class="nav-item">
+                  <a href="#" class="nav-link active">Product</a>
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link">About us</a>
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link">Contact Us</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <hr />
+
+          <!--## Add Product Button ##-->
+          <div class="row">
+            <div class="col text-end">
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#product_modal"
+              >
+                New Product
+              </button>
+            </div>
+          </div>
+
+          <!--## All Products View ##-->
+          <div class="row" id="all_products"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      let user = null;
+      const signinSignupBox = document.querySelector("#signin_signup_box");
+      const signOutBtn = document.querySelector("#sout");
+      const signoutWelcomeBox = document.querySelector("#signout_welcome_box");
+      const userArea = document.querySelector("#user_area");
+      const welcomeUser = document.querySelector("#welcome_user");
+      const allProducts = document.querySelector("#all_products");
+
+      //######################### Signin fields ########### start ###########
+      const signinError = document.querySelector("#signin_error");
+      const siginErrorToast = bootstrap.Toast.getOrCreateInstance(signinError);
+      const signinForm = document.querySelector("#signin_form");
+      const signinCanvas = new bootstrap.Offcanvas("#signin_offcanvas");
+      const signinBtn = document.querySelector("#signin_btn");
+      const _email = document.querySelector("#_email");
+      const _password = document.querySelector("#_password");
+
+      //######################### Signin fields ########### end ###########
+
+      //######################### Product fields ########### Start ###########
+      const saveProdcutBtn = document.querySelector("#save_product_btn");
+      const productName = document.querySelector("#product_name");
+      const productQuantity = document.querySelector("#product_quantity");
+      const productPrice = document.querySelector("#product_price");
+      const productDescription = document.querySelector("#product_description");
+      const productModal = new bootstrap.Modal("#product_modal");
+      const productForm = document.querySelector("#product_form");
+
+      //######################### Product fields ########### end ###########
+
+      //######################### Signup fields ########### start ###########
+      const uname = document.querySelector("#uname");
+      const email = document.querySelector("#email");
+      const password = document.querySelector("#password");
+      const signupForm = document.querySelector("#signup_form");
+      const signupModal = new bootstrap.Modal("#signup-modal");
+
+      const signupBtn = document.querySelector("#signup_btn");
+      //######################### Signup fields ########### end ###########
+
+      // Index File Refresh ############## Start ###########
+
+      const handleFileRefresh = () => {
+        const refreshReq = new XMLHttpRequest();
+
+        refreshReq.open("get", "fetch_user.do", true);
+
+        refreshReq.addEventListener("readystatechange", () => {
+          if (refreshReq.readyState == 4 && refreshReq.status == 200) {
+            const flag = refreshReq.responseText;
+            if (flag == "false") {
+              //--
+            } else {
+              signinSignupBox.style.display = "none";
+              signoutWelcomeBox.classList.remove("d-none");
+              userArea.classList.remove("d-none");
+              //console.log(flag);
+              user = JSON.parse(flag);
+              // console.log(user.username);
+              welcomeUser.innerText = "Welcome" + " " + user.username;
+
+              collectAllProducts();
+            }
+          }
+        });
+
+        refreshReq.send();
+      };
+
+      handleFileRefresh();
+      // Index File Refresh ############## End ###########
+
+      //########### Sign Out ############ Start #######
+      signOutBtn.addEventListener("click", () => {
+        const signOutReq = new XMLHttpRequest();
+
+        signOutReq.open("get", "signout.do", true);
+
+        signOutReq.addEventListener("readystatechange", () => {
+          if (signOutReq.readyState == 4 && signOutReq.status == 200) {
+            if (signOutReq.responseText == "true") {
+              signinSignupBox.style.display = "inline";
+              signoutWelcomeBox.classList.add("d-none");
+              userArea.classList.add("d-none");
+              allProducts.innerHTML = "";
+              welcomeUser.innerText = "Welcome";
+            }
+          }
+        });
+
+        signOutReq.send();
+      });
+
+      //########### Sign Out ############ End #######
+
+      //// ########### SignIn ######### start #####################
+      signinBtn.addEventListener("click", () => {
+        const signinReq = new XMLHttpRequest();
+
+        signinReq.open(
+          "get",
+          "signin.do?email=" + _email.value + "&password=" + _password.value,
+          true
+        );
+
+        signinReq.addEventListener("readystatechange", () => {
+          if (signinReq.readyState == 4 && signinReq.status == 200) {
+            const flag = signinReq.responseText;
+            if (flag == "false") {
+              siginErrorToast.show();
+            } else {
+              signinForm.reset();
+              signinCanvas.hide();
+              signinSignupBox.style.display = "none";
+              signoutWelcomeBox.classList.remove("d-none");
+              userArea.classList.remove("d-none");
+              //console.log(flag);
+              user = JSON.parse(flag);
+              // console.log(user.username);
+              welcomeUser.innerText = "Welcome" + " " + user.username;
+
+              collectAllProducts();
+            }
+          }
+        });
+        signinReq.send();
+      });
+      /// ########### SignIn ######### End #####################
+
+      // ########### SignUp ######### start #####################
+      signupBtn.addEventListener("click", () => {
+        const signupReq = new XMLHttpRequest();
+
+        signupReq.open(
+          "GET",
+          "signup.do?uname=" +
+            uname.value +
+            "&email=" +
+            email.value +
+            "&password=" +
+            password.value,
+          true
+        );
+
+        signupReq.addEventListener("readystatechange", () => {
+          let resp = signupReq.responseText;
+
+          //console.log(resp, typeof resp);
+          if (resp == "true") {
+            signupForm.reset();
+            signupModal.hide();
+          }
+        });
+
+        signupReq.send();
+      });
+
+      // ########### SignUp ######### end #####################
+
+      //########### Save Product #########  Start ###########3
+      saveProdcutBtn.addEventListener("click", () => {
+        const saveProductReq = new XMLHttpRequest();
+
+        saveProductReq.open(
+          "GET",
+          `save_product.do?product_name=${productName.value}&product_quantity=${productQuantity.value}&product_price=${productPrice.value}&product_description=${productDescription.value}`,
+          true
+        );
+
+        saveProductReq.addEventListener("readystatechange", () => {
+          if (saveProductReq.readyState == 4 && saveProductReq.status == 200) {
+            if (saveProductReq.responseText == "true") {
+              productModal.hide();
+              productForm.reset();
+
+              collectAllProducts();
+            }
+          }
+        });
+
+        saveProductReq.send();
+      });
+
+      //########### Save Product #########  End ###########
+
+      //########### Show product ########### Start######
+      const collectAllProducts = () => {
+        const allProductsReq = new XMLHttpRequest();
+
+        allProductsReq.open("get", "all_products.do", true);
+
+        allProductsReq.addEventListener("readystatechange", () => {
+          if (allProductsReq.readyState == 4 && allProductsReq.status == 200) {
+            let products = JSON.parse(allProductsReq.responseText);
+            allProducts.innerHTML = "";
+           
+
+            for (let product of products) {
+              let col = document.createElement("div");
+              col.classList.add("col-xxl-3");
+              col.classList.add("col-lg-4");
+              col.classList.add("col-md-6");
+              // col.classList.add("border");
+              // col.classList.add("border-danger");
+
+              // col.classList.add("me-1");
+              col.classList.add("mt-5");
+
+              let card = document.createElement("div");
+              card.classList.add("card");
+              card.classList.add("mx-auto");
+              card.classList.add("position-relative");
+              card.style.width = "18rem";
+
+              let cardBody = document.createElement("div");
+              cardBody.classList.add("card-body");
+
+              let delImg = document.createElement("img");
+              delImg.src = "del.png";
+              delImg.classList.add("position-absolute");
+              delImg.classList.add("del");
+              // delImg.classList.add('top-50');
+              // delImg.classList.add('end-50');
+              delImg.style.top = "1rem";
+              delImg.style.right = "1rem";
+              delImg.id = product.productId;
+              cardBody.append(delImg);
+
+              let pname = null;
+              let pquantity = null;
+              let pprice = null;
+              let pdescription = null;
+              for (let prop in product) {
+                if (prop == "name") {
+                  pname = product[prop];
+                } else if (prop == "description") {
+                  pdescription = product[prop];
+                } else if (prop == "price") {
+                  pprice = product[prop];
+                } else if (prop == "quantity") {
+                  pquantity = product[prop];
+                }
+              }
+
+              let title = document.createElement("h5");
+              title.classList.add("card-title");
+              title.innerText = pname.substring(0, 16) + "...";
+              title.title = pname;
+              cardBody.append(title);
+
+              let descp = document.createElement("p");
+              descp.classList.add("card-text");
+              descp.innerText = pdescription;
+              cardBody.append(descp);
+
+              let price = document.createElement("span");
+              price.innerText = `Price: ${pprice}`;
+              cardBody.append(price);
+
+              let quantity = document.createElement("span");
+              quantity.innerText = `Quantity: ${pquantity}`;
+              quantity.classList.add("float-end");
+              cardBody.append(quantity);
+              card.append(cardBody);
+              col.append(card);
+              allProducts.append(col);
+            }
+            
+            allProducts.addEventListener("click", (ev) => {
+              // console.log(ev.target.tagName);
+              // console.log(ev.target.className);
+              if (ev.target.className.includes("del")) {
+                let delReq = new XMLHttpRequest();
+
+                delReq.open(
+                  "get",
+                  "del_product.do?product_id=" + ev.target.id,
+                  false
+                );
+                
+                delReq.addEventListener("readystatechange", () => {
+                  if (delReq.readyState == 4 && delReq.status == 200) {
+                    if (delReq.responseText == "true") {
+                      ev.target.parentNode.parentNode.parentNode.remove();
+                    }
+                  }
+                });
+
+                delReq.send();
+              }
+            });
+          }
+        });
+
+        allProductsReq.send();
+      };
+      //########### Show product ########### End######
+    </script>
+  </body>
+</html>
+
+<!--<div class="alert alert-secondary w-50 d-block" id="product_msg">
+                    No Products Found
+                </div>-->
