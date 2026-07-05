@@ -1,0 +1,43 @@
+package controllers;
+
+import javax.servlet.http.*;
+import javax.servlet.ServletException;
+import java.io.*;
+import javax.servlet.annotation.WebServlet;
+
+@WebServlet("/show.do")
+public class ShowServlet extends HttpServlet{
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException , ServletException{
+
+        String sh = request.getParameter("user_name");
+        String[] names = {"Mohan" , "Sohan", "rohan", "Ganseh", "Dinesh", "Vikram", "Kshitij" , "Pooran"};
+
+        response.setContentType("text/html");
+
+        PrintWriter pw = response.getWriter();
+
+        pw.write("<!DOCTYPE html>");
+        pw.write("<html lang='en'>");
+        pw.write("<head>");
+        pw.write("<title>::Servlet Response::</title>");
+        pw.write("</head>");
+        pw.write("<body>");
+        pw.write("<h1>My Servlet Response...!!!</h1>");
+        pw.write("<hr>");
+        pw.write("<table border='1' align='center' bgcolor = 'yellow'>");
+        for(String next: names){
+            if(next.contains(sh)){
+            pw.write("<tr><td>");
+            pw.write("<h2>" + next + "</h2>");
+            pw.write("</td></tr>");
+            }
+        }
+        pw.write("</table>");
+        pw.write("</body>");
+        pw.write("</html>");
+        
+        pw.close();
+    }
+}
+
+
